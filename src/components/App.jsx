@@ -1,16 +1,12 @@
+// import Sky from '../components/Sky/Sky';
+import Dropdown from './Dropdown/Dropdown';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      Web site for forecast of weather
+    <div style={{ textAlign: 'center' }}>
+      <h1>Web site for a forecast of weather</h1>
+      <Dropdown />
+      {/* <Sky initialValue={1} /> */}
     </div>
   );
 };
