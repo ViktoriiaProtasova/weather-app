@@ -100,7 +100,7 @@ export default function Search() {
                 <li>Humidity: {humidity}%</li>
                 <li>Wind: {wind}km/h</li>
                 <li>
-                  <img src={icon} alt="Weather icon" />
+                  <img src={icon} alt={description} />
                 </li>
               </ul>
             </>
