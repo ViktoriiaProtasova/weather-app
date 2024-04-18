@@ -41,6 +41,11 @@ b {
   margin-bottom: 10px;
 }
 
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
 .weatherList {
   width: 180px;
 }
