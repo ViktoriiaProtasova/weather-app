@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import './Weather.css';
 import WeatherInfo from './WeatherInfo';
 import WeatherForecast from './WeatherForecast';
 import axios from 'axios';
-import './Weather.css';
 import { MagnifyingGlass } from 'react-loader-spinner';
 
 export default function Weather(props) {
@@ -33,7 +33,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = '4e2ef63817950c7df54e72f923dae8f1';
+    const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
