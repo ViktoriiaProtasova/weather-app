@@ -29,12 +29,12 @@
   color: rgb(33, 33, 33);
   font-size: 64px;
   line-height: 1;
-  margin-left: 5px;
+  margin-left: 10px;
   font-weight: 400;
 }
 
 .Weather canvas {
-  margin: 10px auto;
+  margin: auto;
 }
 
 .Weather .unit {

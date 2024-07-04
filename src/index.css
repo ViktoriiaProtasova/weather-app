@@ -47,6 +47,10 @@ a {
   color: #007bff;
 }
 
+.d-flex {
+  align-items: center;
+}
+
 .weatherList {
   width: 180px;
 }
