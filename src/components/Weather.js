@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Weather.css';
 import WeatherInfo from './WeatherInfo';
 import WeatherForecast from './WeatherForecast';
 import { MagnifyingGlass } from 'react-loader-spinner';
 
-export default function Weather(props) {
-  const [weatherData, setWeatherData] = useState({ ready: false });
-  const [city, setCity] = useState(props.defaultCity);
+export default function Weather({ data }) {
+  const [weatherData, setWeatherData] = useState(data);
+  const [city, setCity] = useState(data.name);
+
+  useEffect(() => {
+    setWeatherData(data);
+  }, [data]);
 
   function handleResponse(response) {
     setWeatherData({
@@ -67,16 +71,17 @@ export default function Weather(props) {
   } else {
     search();
     return (
-      <MagnifyingGlass
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="magnifying-glass-loading"
-        wrapperStyle={{}}
-        wrapperClass="magnifying-glass-wrapper"
-        glassColor="#f2f2f1"
-        color="#48484a"
-      />
+      <div className="loaderWrapper">
+        <MagnifyingGlass
+          className="magnifyingGlass"
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="magnifying-glass-loading"
+          glassColor="#f2f2f1"
+          color="#48484a"
+        />
+      </div>
     );
   }
 }
