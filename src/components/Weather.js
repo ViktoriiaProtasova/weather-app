@@ -4,6 +4,7 @@ import './Weather.css';
 import WeatherInfo from './WeatherInfo';
 import WeatherForecast from './WeatherForecast';
 import { MagnifyingGlass } from 'react-loader-spinner';
+import { FaSearchLocation } from 'react-icons/fa';
 
 export default function Weather({ data }) {
   const [weatherData, setWeatherData] = useState(data);
@@ -29,6 +30,10 @@ export default function Weather({ data }) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log();
+    if (event.target[0].value === '') {
+      alert('Please, type a city..');
+    }
     search();
   }
 
@@ -59,7 +64,7 @@ export default function Weather({ data }) {
             </div>
             <div className="col-3">
               <button type="submit" className="btn btn-primary w-100">
-                Search
+                <FaSearchLocation />
               </button>
             </div>
           </div>
