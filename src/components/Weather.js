@@ -30,7 +30,7 @@ export default function Weather({ data }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log();
+
     if (event.target[0].value === '') {
       alert('Please, type a city..');
     }
@@ -43,7 +43,7 @@ export default function Weather({ data }) {
 
   function search() {
     const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
   }
