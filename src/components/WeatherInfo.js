@@ -17,7 +17,7 @@ export default function WeatherInfo({ data }) {
         <div className="col-6">
           <div className="d-flex canvas">
             <div>
-              <WeatherIcon code={data.icon} size={52} />
+              <WeatherIcon code={data.icon} size={64} />
             </div>
 
             <div>
